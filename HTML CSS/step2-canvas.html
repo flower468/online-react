@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid darkslategrey;
+            margin: 100px auto;
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            var can = document.getElementsByTagName("canvas")[0];
+                can.width = 400;
+                can.height = 400;
+            var context = can.getContext("2d");
+            /*
+                context.font = "bold 24px arial";
+                context.scale(1,5); // scale
+                context.rotate((Math.PI/180)*45);// rotation
+                context.translate(10, 30); // translate
+                context.fillText("Welcome to your life", 0, 0);
+            */
+            /*
+                context.moveTo(0,0);
+                context.lineTo(50,50);
+                context.moveTo(60,60);
+                context.lineTo(110,110);
+                context.moveTo(120,120);
+                context.lineTo(170,170);
+                context.moveTo(180,180);
+                context.lineTo(230,230);
+                context.stroke();              
+            */
+            /*
+                context.moveTo(50,50);
+                context.lineTo(50,250);
+                context.lineTo(250,250);
+                context.lineTo(250,50);
+                context.lineTo(50,50);
+                context.stroke();      
+            */
+
+            /*
+            var boxX = -50;
+                setInterval(function(){ 
+                    context.clearRect(0,0,400,400);
+                    context.fillRect(boxX, 0, 50, 50);
+                    boxX++;
+                    if(boxX > 400){
+                        boxX = -50;
+                    }
+                }, 10 )
+            */
+            setInterval(function(){ 
+                var boxX = Math.round(Math.random() * 400);
+                var boxY = Math.round(Math.random() * 400);
+                var boxD = Math.round(Math.random() * 50);
+
+                //    context.clearRect(0,0,400,400);
+                var red = Math.round(Math.random() * 255);
+                var green = Math.round(Math.random() * 255);
+                var blue = Math.round(Math.random() * 255);
+                var alpha = Math.random();
+
+                    context.fillStyle = "rgba("+red+","+green+","+blue+","+alpha+")";
+                    context.fillRect(boxX, boxY, boxD, boxD);
+            }, 10 )
+
+            
+        })
+    </script>
+</head>
+<body>
+    <canvas></canvas>
+</body>
+</html>

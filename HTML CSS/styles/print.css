@@ -1,0 +1,15 @@
+.container{
+    border:  5px dotted black;
+    margin : auto;
+    height: 500px;
+}
+[class ^= box]{
+    width : 100px;
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
+    float : left;
+    margin : 2px;
+    outline: 2px dashed black;
+}

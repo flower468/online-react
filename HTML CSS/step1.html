@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            document.getElementsByTagName("input")[0].onchange = function(){
+
+                document.getElementsByTagName("span")[0].innerHTML = document.getElementsByTagName("input")[0].value;
+                document.getElementsByTagName("span")[0].style = "color:"+document.getElementsByTagName("input")[0].value;
+            }
+        }
+    </script>
+</head>
+<body>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. <mark>Modi</mark> recusandae dicta ab! Ad illo error quos. Sequi ipsum velit quas, necessitatibus quibusdam expedita soluta voluptate cum labore nemo perspiciatis amet.
+    <hr>
+    <input type="color" />
+    <h1>Selected Color : <span></span></h1>
+
+    <input type="range" />
+    <br>
+    <input type="time" />
+    <br>
+    <input type="email" autofocus placeholder="your personal mail id" />
+</body>
+</html>

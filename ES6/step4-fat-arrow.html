@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function myfun( num1, num2 ){
+        //     return num1 + num2;
+        // };
+
+        // let myfun = function ( num1, num2 ){
+        //     return num1 + num2;
+        // };
+
+        let myfun = num1 => num1 * num1;
+
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementById("log").innerHTML = myfun(5);
+        })
+    </script>
+</head>
+<body>
+    <h1> Sum is : <span id="log"></span></h1>
+</body>
+</html>

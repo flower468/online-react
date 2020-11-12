@@ -1,0 +1,22 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class MainApp extends Component{
+  constructor(){
+    super();
+    this.state = {
+
+    }
+  }
+
+  render(){
+    return <div>
+      <h1> Welcome to your life </h1>
+    </div>
+  }
+}
+
+
+ReactDOM.render(<MainApp/>,
+  document.getElementById('root')
+);

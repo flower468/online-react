@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="javascript" type="text/javascript">
+
+        var wsUri = "wss://echo.websocket.org/";
+        var output;
+
+        function init() {
+            output = document.getElementById("output");
+            testWebSocket();
+            document.getElementsByTagName("button")[0].addEventListener("click", function(){
+                doSend("WebSocket rocks");
+            })
+            document.getElementsByTagName("button")[1].addEventListener("click", function(){
+                websocket.close();
+            })
+        }
+
+        function testWebSocket() {
+            websocket = new WebSocket(wsUri);
+            websocket.addEventListener("open", onOpen);
+            websocket.addEventListener("close", onClose);
+            websocket.addEventListener("message", onMessage);
+            websocket.addEventListener("error", onError);
+        }
+
+        function onOpen(evt) {
+            writeToScreen("CONNECTED");
+        }
+
+        function onClose(evt) {
+            writeToScreen("DISCONNECTED");
+        }
+
+        function onMessage(evt) {
+            writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data + '</span>');
+        }
+
+        function onError(evt) {
+            writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+        }
+
+        function doSend(message) {
+            writeToScreen("SENT: " + message);
+            websocket.send(message);
+        }
+
+        function writeToScreen(message) {
+            var pre = document.createElement("p");
+            pre.style.wordWrap = "break-word";
+            pre.innerHTML = message;
+            output.appendChild(pre);
+        }
+
+        window.addEventListener("load", init);
+
+    </script>
+</head>
+
+<body>
+    <h2>WebSocket Test</h2>
+    <button>Send Message</button>
+    <button>Stop Message</button>
+    <div id="output"></div>
+</body>
+
+</html>

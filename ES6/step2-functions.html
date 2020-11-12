@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function myfun(){
+        //     let total = 0;
+        //     for(let i = 0; i < arguments.length ; i++){
+        //         total += arguments[i];
+        //     }
+        //     return total;
+        // };
+        
+        // REST Arguments
+        function myfun(...nums){
+            let total = 0;
+            for(let i = 0; i < nums.length ; i++){
+                total += nums[i];
+            }
+            return total;
+        };
+
+        let arr = [2,3,4,5,6,7];
+
+        document.addEventListener("DOMContentLoaded", init);
+        function init(){
+        // SPREAD OPERATOR
+            document.getElementById("log").innerHTML = myfun(...arr);
+            // document.getElementById("log").innerHTML = myfun(2,3,4,5,6,7);
+        };
+
+    </script> 
+</head>
+<body>
+    <h1>Sum is : <span  id="log"></span></h1>
+</body>
+</html>
